@@ -1,0 +1,43 @@
+/* this is a css comment- only comment style
+css syntaxt
+
+selctor(
+property: value;
+property: value;
+
+)
+
+selactor: 3 options: html tag/element, id of an element (#id), custom class- satrts, (classname)
+just  use external CSS file in this class
+*/
+
+/* body will apply to the entire page */
+
+body {
+    background-color: rgb(173, 183, 230);
+    color: white;
+}
+/* header will just apply to the section with the title */
+header{
+    text-align: center;
+}
+
+nav{height: 600px;
+    width: 200px;
+    float: left;
+    padding: 5px;
+    line-height: 30px;
+}
+
+
+#memeImage{
+    position:absolute;
+    left: 200px;
+    top: 200px;
+}
+
+footer{
+    text-align: center;
+    margin-right: 200px;
+}
+
