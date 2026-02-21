@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input validation</title>
+</head>
+<body>
+    <header>
+    <h1> input validation </h1>
+    <link rel="stylesheet" href="main.css">
+    </header>
+    <main>
+        <div id="divmessage"></div>
+        <form> 
+            <div>
+            
+            <label for="txtfirstname">First Name:</label>
+            <input type ="text" id="txtfirstname">
+            
+            </div>
+
+             <div>
+            
+            <label for="txtlastname">Last Name:</label>
+            <input type ="text" id="txtlastname">
+            
+            </div>
+
+                <div>
+                    <label for="txtzip"> Zip Code :</label>
+            <input type ="text" id="txtzip">
+                 </div>
+          <button type="button" onclick="validate();">Validate</button>
+        </form>
+    </main>
+
+   <script src="script.js"></script> 
+    
+</body>
+</html>
