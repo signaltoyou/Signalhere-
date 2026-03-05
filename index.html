@@ -22,12 +22,14 @@
     <h1> welcome to my Csc102 landing page </h1>
 
    </header> 
-    
+
+   <button id="btstart" onclick="startImagemove();">start move image</button>
+    <button id="btstop" onclick="stopImagemove();" disabled="true">stop move image</button>
    <div>
  <p>
 
     <img id="memeImage" 
-    src="programmerhumor-io-debugging-memes-javascript-memes-dcb64296691c177.png" width="300">
+    src="programmerhumor-io-debugging-memes-javascript-memes-dcb64296691c177.png" width="200">
     
 
 
@@ -35,21 +37,60 @@
 
 </p>
    </div>
+   
+  <script>
+
+ function stopImagemove(){
+      clearInterval(inervaildid);
+   
+      document.getElementById("btstart").disabled = false;
+   
+      document.getElementById("btstop").disabled = true;
+ }
+
+  let inervaildid = 0;
+   // create the fuction to move the image 
+   function startImagemove(){ 
+      // we are creating a verible for are html image 
+      let memeImage = document.getElementById("memeImage");
+
+     inervaildid= setInterval(function(){
+         let topcord = getrandompixels();
+         let leftcord = getrandompixels();
+         
+         memeImage.style.left = leftcord + "px";
+         memeImage.style.top = topcord + "px";
+      },1000);
+
+     
 
 
-   </script>
- 
+
+      document.getElementById("btstart").disabled = true;
+
+      document.getElementById("btstop").disabled = false;
+   }
+
+
+
+  
+   function getrandompixels(){
+
+      return Math.floor(Math.random() * 800);
+   }
+  </script>
+
+   
    <h2>Play My Dice Game</h2>
 
-<button onclick="playDiceGame()">Play Dice Game</button>
+<button onclick="playGame();"> Play Game </button>
 
 <div id="divmessage">Waiting for the game to start...</div>
 <div id="divroll1"></div>
 <div id="divroll2"></div>
 <div id="divsum"></div>
-<!-- link to game project -->
-<script src="script.js"></script>
 
+<script src="script.js"></script>
 
   <h2> there are 4 pillers of programing </h2>
     
@@ -73,11 +114,22 @@
      </script>
   <h3>fuctions</h3> 
 
-  <h3> desicsion logic (if/else) </h3>
-
-  <h3>loops</h3>
 
   <script>
+
+   function addnumbers(){
+
+      let number1= 5;
+      let number2= 8;
+      let sum = number1 + number2;
+
+      console.log("The sum is:", sum);
+   }
+
+   addnumbers();
+
+
+
    // when testing an if statment we use a boolean expression- an expression that evaluates to either true or false)
    //  in an if  chunck of coe is run if the condition is true; if the condition is false the code is skipped
    if (firstname == "kevin"|| lastname == "kelly") {
@@ -91,8 +143,46 @@
    }
   </script>
 
+  <h3> desicsion logic (if/else) </h3>
+
   <h3>loops</h3>
 
+  <script>
+   function runcalc(){
+
+      let num1 = 8;
+      let num2 = 2;
+
+      let isvalid= false;
+
+      while (!isvaild){
+
+         num1 = prompt("enter a number");
+         
+         if (isNaN(num1)){
+            alert("please enter valid numbers");
+         }
+         else{
+            isvalid = true;
+         }
+      }
+        while (!isvaild){
+
+         num2 = prompt("enter another number");
+         
+         if (isNaN(num2)){
+            alert("please enter valid numbers");
+         }
+         else{
+            isvalid = true;
+         }
+      }
+      let sum = num1 + num2;
+      console.log("the sum is:", sum);
+      alert("the sum is:" + sum);
+   }
+   runcalc();
+  </script>
 </body>
 <!-- the closing html tag should be at the very end of the file -->
 </html>    
