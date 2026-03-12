@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <h1>Palindrome Checker</h1>
+    </header>
+    <main>
+        <form onsubmit="checkpalin(event);">
+            <label for="txtword">enter a word or phrase:</label>
+            <input type="text" id="txtword">
+            <input type="submit" value="check word">
+        </form>
+        <div id="divmessage"></div>
+    </main>
+    <script>
+        function checkpalin(event){
+            event.preventDefault();
+            let wordtotest= document.getElementById("txtword").value;
+           console.log("wordtotest="+ wordtotest);
+
+           let bPalin =  ispalin(wordtotest);
+
+           let divmessage = document.getElementById("divmessage");
+
+            if(bPalin){
+                divmessage.textContent = "The word/phrase is a palindrome.";
+            } 
+            
+            else {
+                divmessage.textContent = "The word/phrase is not a palindrome.";
+            }
+        }
+
+
+        function ispalin(strtotest){
+            strtotest = strtotest.toLowerCase();
+
+             console.log("strtotest="+ strtotest);
+
+             let strReverse = strtotest;
+
+                strReverse = strReverse.split("").reverse().join("");
+
+                console.log("strReverse=" + strReverse);
+
+                if(strReverse == strtotest){
+                   return true;
+                }
+                
+                return false;
+        }
+        
+    </script>
+</body>
+</html>
